@@ -14,7 +14,7 @@ public class DriveByMovement : MonoBehaviour
     public void FixedUpdate() {
         this.transform.position = new Vector3(transform.position.x -speed, transform.position.y, transform.position.z);
 
-        if(transform.position.x < 50) {
+        if(transform.position.x < -50) {
             Destroy(this.gameObject);
         }
     }

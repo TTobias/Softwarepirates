@@ -22,7 +22,7 @@ public class CloudSpawner : MonoBehaviour
         GameObject g = Instantiate<GameObject>(cloud);
         float depth = Random.Range(0f, 100f);
         float height = Random.Range(0f, 100f);
-        cloud.transform.position = new Vector3(-200, height, -depth);
+        cloud.transform.position = new Vector3(50, height, -depth);
         cloud.GetComponent<DriveByMovement>().depth = depth;
         cloud.GetComponent<DriveByMovement>().speed = Random.Range(0.001f, 0.1f);
     }
