@@ -9,6 +9,8 @@ public class ShootingBehavior : MonoBehaviour
     public int grappleCooldown = 20;
     public int tmpGrappleCooldown = 0;
 
+    public float hitTolerance = 2f;
+
     public Vector2 aimPosition;
 
     public Vector3 shootSpawnPos;
