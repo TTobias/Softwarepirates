@@ -122,7 +122,7 @@ PrefabInstance:
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.74
+      value: 11.190001
       objectReference: {fileID: 0}
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
@@ -184,6 +184,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1001 &194991027
@@ -196,7 +208,7 @@ PrefabInstance:
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.74
+      value: 11.190001
       objectReference: {fileID: 0}
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
@@ -258,6 +270,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1001 &199018723
@@ -270,7 +294,7 @@ PrefabInstance:
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.74
+      value: 11.190001
       objectReference: {fileID: 0}
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
@@ -332,6 +356,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1001 &337916529
@@ -344,7 +380,7 @@ PrefabInstance:
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.74
+      value: 11.190001
       objectReference: {fileID: 0}
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
@@ -401,6 +437,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CloudSpawner (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1001 &419641471
@@ -413,7 +461,7 @@ PrefabInstance:
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.74
+      value: 11.190001
       objectReference: {fileID: 0}
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
@@ -475,6 +523,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1001 &469251190
@@ -487,7 +547,7 @@ PrefabInstance:
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.74
+      value: 11.190001
       objectReference: {fileID: 0}
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
@@ -549,6 +609,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1001 &940138236
@@ -561,7 +633,7 @@ PrefabInstance:
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.74
+      value: 11.190001
       objectReference: {fileID: 0}
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
@@ -623,6 +695,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1 &1250482514
@@ -797,7 +881,7 @@ PrefabInstance:
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.74
+      value: 11.19
       objectReference: {fileID: 0}
     - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
@@ -859,5 +943,92 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
+--- !u!1001 &7389714641532744330
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2658671684890713569, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658671684890713569, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658671684890713569, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658671684890713569, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658671684890713569, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658671684890713569, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658671684890713569, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658671684890713569, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658671684890713569, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658671684890713569, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658671684890713569, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208766552978902402, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: m_Name
+      value: ItemSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249236929503892217, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: itemPrefab
+      value: 
+      objectReference: {fileID: 6453999440949724584, guid: e3052b23e3c8d2341b190d167edb1c79,
+        type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b84c4ee89dc1a0543b6497abb1bb8cb5, type: 3}

@@ -7,6 +7,7 @@ public class ItemSpawner : MonoBehaviour
     public GameObject itemPrefab;
     public float minWaitTime, maxWaitTime;
     public float minVertical, maxVertical;
+    public float minItemSpeed, maxItemSpeed;
     private GameObject holder;
 
     private void OnDrawGizmos()
@@ -26,12 +27,12 @@ public class ItemSpawner : MonoBehaviour
     {
         float yValue = Random.Range(minVertical, maxVertical);
         Vector3 startingPos = transform.position + new Vector3(0, yValue, 0);
-        GameObject newCloud = Instantiate(itemPrefab, startingPos, Quaternion.identity);
-        newCloud.transform.localScale /= transform.position.z;
-        CloudController controller = newCloud.GetComponent<CloudController>();
-        controller.speed = 2 / transform.position.z;
+        GameObject newItem = Instantiate(itemPrefab, startingPos, Quaternion.identity);
+        newItem.transform.localScale /= transform.position.z;
+        Item controller = newItem.GetComponent<Item>();
+        controller.SetSpeed(Random.Range(minItemSpeed, maxItemSpeed) / transform.position.z);
         controller.SetKillPos(-transform.position.x);
-        newCloud.transform.parent = holder.transform;
+        newItem.transform.parent = holder.transform;
         yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
         StartCoroutine(SpawnAndWait());
     }
