@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloudSpawner : MonoBehaviour
+public class CloudSpawnerOld : MonoBehaviour
 {
     public float cooldown = 1000f;
     public float tmp = 0f;
