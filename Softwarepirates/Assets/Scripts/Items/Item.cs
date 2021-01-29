@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloudController : MonoBehaviour
+public abstract class Item : MonoBehaviour
 {
-    public float speed;
+    private float speed;
     private float killAt;
+
+    void Start()
+    {
+        ActiveObjects active = FindObjectOfType<ActiveObjects>();
+        active.items.Add(gameObject);
+    }
 
     void Update()
     {
@@ -20,4 +26,11 @@ public class CloudController : MonoBehaviour
     {
         killAt = pos;
     }
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
+
+    public abstract void DoStuff();
 }
