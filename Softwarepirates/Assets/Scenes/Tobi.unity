@@ -235,6 +235,8 @@ MonoBehaviour:
   grappleSpawnPos: {fileID: 1427866673}
   bulletObject: {fileID: 3014863109330980487, guid: c51766f4a82a39a46872784d75d105c2,
     type: 3}
+  grappleObject: {fileID: 3014863109330980487, guid: f8b08bea71000f04ebfc4dbdb87ff885,
+    type: 3}
   objectlist: {fileID: 0}
 --- !u!1 &1353155853
 GameObject:
