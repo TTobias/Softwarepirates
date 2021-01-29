@@ -11,15 +11,20 @@ public class ShootingBehavior : MonoBehaviour
 
     public float hitTolerance = 2f;
 
-    public Vector2 aimPosition;
+    public Vector3 aimPosition;
 
-    public Vector3 shootSpawnPos;
-    public Vector3 grappleSpawnPos;
+    public Camera cam;
+
+    public Transform shootSpawnPos;
+    public Transform grappleSpawnPos;
+
+    public GameObject bulletObject;
 
     public ActiveObjects objectlist;
 
     public void Start() {
         objectlist = GetComponent<ActiveObjects>();
+        cam = GetComponent<Camera>();
     }
 
     public void Update() {
@@ -52,6 +57,7 @@ public class ShootingBehavior : MonoBehaviour
 
         if(hit == null) {
             //FIRE EMPTY
+            spawnBullet(shootSpawnPos.position ,new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, 30));
         }
         else {
             //FIRE TARGET
@@ -63,6 +69,7 @@ public class ShootingBehavior : MonoBehaviour
 
         if (hit == null) {
             //FIRE EMPTY
+            spawnGrapple();
         }
         else {
             //FIRE TARGET
@@ -70,6 +77,17 @@ public class ShootingBehavior : MonoBehaviour
     }
 
 
+    public void spawnBullet(Vector3 start, Vector3 end) {
+        GameObject tmp = Instantiate<GameObject>(bulletObject);
+        tmp.transform.position = start;
+
+        tmp.GetComponent<BulletBehavior>().destination = end;
+    }
+
+
+    public void spawnGrapple() {
+
+    }
 
 
     public GameObject testForHit() {
