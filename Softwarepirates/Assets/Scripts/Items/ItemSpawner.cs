@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
-    public GameObject cloudPrefab;
+    public GameObject itemPrefab;
     public float minWaitTime, maxWaitTime;
     public float minVertical, maxVertical;
     private GameObject holder;
@@ -26,7 +26,7 @@ public class ItemSpawner : MonoBehaviour
     {
         float yValue = Random.Range(minVertical, maxVertical);
         Vector3 startingPos = transform.position + new Vector3(0, yValue, 0);
-        GameObject newCloud = Instantiate(cloudPrefab, startingPos, Quaternion.identity);
+        GameObject newCloud = Instantiate(itemPrefab, startingPos, Quaternion.identity);
         newCloud.transform.localScale /= transform.position.z;
         CloudController controller = newCloud.GetComponent<CloudController>();
         controller.speed = 2 / transform.position.z;

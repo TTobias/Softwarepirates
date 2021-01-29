@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3442954878439484447}
   - component: {fileID: 3001831336161991148}
   - component: {fileID: 3669631825683726693}
-  - component: {fileID: 61060325578929492}
   m_Layer: 0
   m_Name: Cloud
   m_TagString: Untagged
@@ -94,29 +93,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
---- !u!61 &61060325578929492
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5053210258025863586}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.6, y: 4.19}
-    newSize: {x: 9.6, y: 4.19}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 9.6, y: 4.19}
-  m_EdgeRadius: 0

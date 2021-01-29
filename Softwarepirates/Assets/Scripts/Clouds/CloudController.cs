@@ -9,8 +9,8 @@ public class CloudController : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(speed * Time.deltaTime, 0f, 0f);
-        if (transform.position.x > killAt)
+        transform.Translate(-speed * Time.deltaTime, 0f, 0f);
+        if (transform.position.x < killAt)
         {
             Destroy(gameObject);
         }
