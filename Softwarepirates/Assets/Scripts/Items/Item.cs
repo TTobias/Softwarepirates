@@ -4,22 +4,29 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour
 {
-    private float speed;
-    private float killAt;
+    protected float speed;
+    protected float killAt;
+    private ActiveObjects active;
 
-    void Start()
+    public void Start()
     {
-        ActiveObjects active = FindObjectOfType<ActiveObjects>();
+        active = FindObjectOfType<ActiveObjects>();
         active.items.Add(gameObject);
     }
 
-    void Update()
+    public virtual void Update()
     {
         transform.Translate(-speed * Time.deltaTime, 0f, 0f);
         if (transform.position.x < killAt)
         {
-            Destroy(gameObject);
+            Cleanup();
         }
+    }
+
+    protected void Cleanup()
+    {
+        active.items.Remove(gameObject);
+        Destroy(gameObject);
     }
 
     public void SetKillPos(float pos)
@@ -30,6 +37,11 @@ public abstract class Item : MonoBehaviour
     public void SetSpeed(float speed)
     {
         this.speed = speed;
+    }
+
+    public float GetSpeed(float speed)
+    {
+        return this.speed;
     }
 
     public abstract void DoStuff();
