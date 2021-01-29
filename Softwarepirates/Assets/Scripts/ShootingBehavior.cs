@@ -19,6 +19,7 @@ public class ShootingBehavior : MonoBehaviour
     public Transform grappleSpawnPos;
 
     public GameObject bulletObject;
+    public GameObject grappleObject;
 
     public ActiveObjects objectlist;
 
@@ -32,7 +33,7 @@ public class ShootingBehavior : MonoBehaviour
             if(tmpShootCooldown <= 0)
                 shootBullet();
         }
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(1)) {
             if (tmpGrappleCooldown <= 0)
                 launchGrapple();
         }
@@ -57,11 +58,13 @@ public class ShootingBehavior : MonoBehaviour
 
         if(hit == null) {
             //FIRE EMPTY
-            spawnBullet(shootSpawnPos.position ,new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, 5));
+            spawnBullet(shootSpawnPos.position ,new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, 6));
         }
         else {
             //FIRE TARGET
         }
+
+        tmpShootCooldown = shootCooldown;
     }
 
     public void launchGrapple() {
@@ -69,11 +72,13 @@ public class ShootingBehavior : MonoBehaviour
 
         if (hit == null) {
             //FIRE EMPTY
-            spawnGrapple();
+            spawnGrapple(grappleSpawnPos.position, new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, 6));
         }
         else {
             //FIRE TARGET
         }
+
+        tmpGrappleCooldown = grappleCooldown;
     }
 
 
@@ -85,8 +90,11 @@ public class ShootingBehavior : MonoBehaviour
     }
 
 
-    public void spawnGrapple() {
+    public void spawnGrapple(Vector3 start, Vector3 end) {
+        GameObject tmp = Instantiate<GameObject>(grappleObject);
+        tmp.transform.position = start;
 
+        tmp.GetComponent<BulletBehavior>().destination = end;
     }
 
 
