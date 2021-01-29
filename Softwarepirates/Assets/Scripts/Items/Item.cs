@@ -7,6 +7,12 @@ public abstract class Item : MonoBehaviour
     private float speed;
     private float killAt;
 
+    void Start()
+    {
+        ActiveObjects active = FindObjectOfType<ActiveObjects>();
+        active.items.Add(gameObject);
+    }
+
     void Update()
     {
         transform.Translate(-speed * Time.deltaTime, 0f, 0f);
