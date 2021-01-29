@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 1250482517}
   - component: {fileID: 1250482516}
   - component: {fileID: 1250482515}
+  - component: {fileID: 1250482519}
   - component: {fileID: 1250482518}
   m_Layer: 0
   m_Name: Main Camera
@@ -164,7 +165,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -189,7 +190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250482514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1353205763}
@@ -205,12 +206,64 @@ MonoBehaviour:
   m_GameObject: {fileID: 1250482514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82b050724920f904cb29d062cb15ce69, type: 3}
+  m_Script: {fileID: 11500000, guid: 49aab3bebcc358c4e87969fe09b73ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 100
-  tmp: 0
-  cloud: {fileID: 7246659749735444761, guid: a5f2331ad580d8c449617f9f921ee779, type: 3}
+  items: []
+--- !u!114 &1250482519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250482514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd59ac653d016574195e25a4dc061373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootCooldown: 10
+  tmpShootCooldown: 0
+  grappleCooldown: 20
+  tmpGrappleCooldown: 0
+  hitTolerance: 2
+  aimPosition: {x: 0, y: 0, z: 0}
+  cam: {fileID: 0}
+  shootSpawnPos: {fileID: 1353155854}
+  grappleSpawnPos: {fileID: 1427866673}
+  bulletObject: {fileID: 3014863109330980487, guid: c51766f4a82a39a46872784d75d105c2,
+    type: 3}
+  objectlist: {fileID: 0}
+--- !u!1 &1353155853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1353155854}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1353155854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353155853}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.8785101, y: -1.9451025, z: -8.51}
+  m_LocalScale: {x: 0.5351881, y: 0.5560613, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1353205763}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1353205762
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +291,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: -0.032, z: 8.51}
   m_LocalScale: {x: 1.868502, y: 1.798363, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1353155854}
+  - {fileID: 1427866673}
   m_Father: {fileID: 1250482517}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -290,3 +345,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1427866672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1427866673}
+  m_Layer: 0
+  m_Name: GrappleSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1427866673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427866672}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.750065, y: -2.0785573, z: -8.51}
+  m_LocalScale: {x: 0.5351881, y: 0.5560613, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1353205763}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
