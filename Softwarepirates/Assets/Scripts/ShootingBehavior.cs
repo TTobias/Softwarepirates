@@ -57,7 +57,7 @@ public class ShootingBehavior : MonoBehaviour
 
         if(hit == null) {
             //FIRE EMPTY
-            spawnBullet(shootSpawnPos.position ,new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, 30));
+            spawnBullet(shootSpawnPos.position ,new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, 5));
         }
         else {
             //FIRE TARGET
