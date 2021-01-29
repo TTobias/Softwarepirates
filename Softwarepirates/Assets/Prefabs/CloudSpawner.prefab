@@ -45,7 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cloudPrefab: {fileID: 5053210258025863586, guid: 1998412c2b2cf4240a4e1af77d5c3b50,
     type: 3}
-  cloudTextures: []
+  cloudTextures:
+  - {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9, type: 3}
+  - {fileID: 21300000, guid: 48f492c1696bc364bad7f4d4968cbac8, type: 3}
+  - {fileID: 21300000, guid: 2a62a4542cfcdf943b2c29d3ddc5d70e, type: 3}
   minWaitTime: 1
   maxWaitTime: 3
   minVertical: -5
