@@ -39,9 +39,16 @@ public class BulletBehavior : MonoBehaviour
 
             Destroy(this.gameObject);
         }
-
-        if(Vector3.Distance(transform.position,destination) < speed * distanceFactor) {
-            destroy = true;
+        
+        if(referenceObject == null) {
+            if (Vector3.Distance(transform.position, destination) < speed * distanceFactor) {
+                destroy = true;
+            }
+        }
+        else {
+            if (Vector3.Distance(transform.position, referenceObject.transform.position) < speed * distanceFactor) {
+                destroy = true;
+            }
         }
     }
 }
