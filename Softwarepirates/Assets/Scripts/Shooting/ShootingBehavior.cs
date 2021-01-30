@@ -75,7 +75,7 @@ public class ShootingBehavior : MonoBehaviour
 
     public void shootBullet()
     {
-        cloudEmitter.Puke();
+        cloudEmitter.Puke(false);
         shootSpawnPos.gameObject.GetComponent<AudioSource>().Play();
         GameObject hit = testForHit();
 

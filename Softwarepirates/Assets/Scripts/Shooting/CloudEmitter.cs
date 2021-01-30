@@ -24,11 +24,16 @@ public class CloudEmitter : MonoBehaviour
         holder.transform.parent = transform;
     }
 
-    public void Puke()
+    public void Puke(bool kill)
     {
         for(int i = 0; i < cloudAmount; i++)
         {
             StartCoroutine(SpawnOne());
+        }
+        if (kill)
+        {
+            StartCoroutine(WaitAndKill());
+            GetComponent<AudioSource>().Play();
         }
     }
 
@@ -39,8 +44,14 @@ public class CloudEmitter : MonoBehaviour
         rb.AddForce(new Vector2(Random.Range(minForce, maxForce), Random.Range(minForce, maxForce)));
         rb.AddTorque(Random.Range(minTorque, maxTorque));
         newCloud.GetComponent<SpriteRenderer>().sprite = cloudTextures[Random.Range(0, cloudTextures.Length)];
-        newCloud.transform.parent = holder.transform;
+        //newCloud.transform.parent = holder.transform;
         yield return new WaitForSeconds(Random.Range(minLifetime, maxLifetime));
         Destroy(newCloud);
+    }
+
+    public IEnumerator WaitAndKill()
+    {
+        yield return new WaitForSeconds(maxLifetime*2f);
+        Destroy(gameObject);
     }
 }

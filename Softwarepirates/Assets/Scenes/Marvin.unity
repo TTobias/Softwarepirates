@@ -143,7 +143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22633757}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.27, y: -3.7700005, z: 0.5}
+  m_LocalPosition: {x: 3.27, y: -3.7700005, z: 1.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -969,6 +969,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5f56b985dc1e3cf4aa0971ef40e195ec, type: 3}
   - {fileID: 21300000, guid: 98d41b4b32fd122458c65b490136672e, type: 3}
   - {fileID: 21300000, guid: d2a946664112ae94eb919f393c52ce5a, type: 3}
+  - {fileID: 21300000, guid: 69ce3cdb574a79249a1f33c860c57e56, type: 3}
   minForce: -10
   maxForce: 100
   minTorque: -50
@@ -1399,62 +1400,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &629370906
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 629370907}
-  - component: {fileID: 629370908}
-  m_Layer: 0
-  m_Name: CloudEmitter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &629370907
+--- !u!4 &629370907 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 629370906}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.98, y: 1.33, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 599732862}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &629370908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 629370906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f341f551ef0407c4b90fef7f05f00d53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cloudPrefab: {fileID: 923710660040960408, guid: 351a57e101764364b8e85ba3262537f3,
+  m_CorrespondingSourceObject: {fileID: 178030124141405332, guid: a7086caeb6838b644a61c6980ba8f8a9,
     type: 3}
-  cloudTextures:
-  - {fileID: 21300000, guid: c6a236756a8089b4fb9fa5d24dc2a3ca, type: 3}
-  - {fileID: 21300000, guid: 086be0d1c4784c143824acc24e7818fe, type: 3}
-  - {fileID: 21300000, guid: 1dbd79d545e5fd847989d43b9096c2f7, type: 3}
-  minForce: -10
-  maxForce: 60
-  minTorque: -150
-  maxTorque: 150
-  minLifetime: 0.3
-  maxLifetime: 1
-  cloudAmount: 20
+  m_PrefabInstance: {fileID: 178030123545990287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &633579138
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,7 +2610,7 @@ MonoBehaviour:
   grappleSpawnPos: {fileID: 22633758}
   bulletObject: {fileID: 3014863109330980487, guid: c51766f4a82a39a46872784d75d105c2,
     type: 3}
-  grappleObject: {fileID: 3014863109330980487, guid: f8b08bea71000f04ebfc4dbdb87ff885,
+  grappleObject: {fileID: 6453999440949724584, guid: 861923e17b741d64faa84dd4d0f6d4dc,
     type: 3}
   objectlist: {fileID: 0}
   leftMouseImg: {fileID: 1400790520}
@@ -3581,6 +3532,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7389714641532744330}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &178030123545990287
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 599732862}
+    m_Modifications:
+    - target: {fileID: 178030124141405332, guid: a7086caeb6838b644a61c6980ba8f8a9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 178030124141405332, guid: a7086caeb6838b644a61c6980ba8f8a9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 178030124141405332, guid: a7086caeb6838b644a61c6980ba8f8a9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178030124141405332, guid: a7086caeb6838b644a61c6980ba8f8a9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178030124141405332, guid: a7086caeb6838b644a61c6980ba8f8a9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178030124141405332, guid: a7086caeb6838b644a61c6980ba8f8a9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178030124141405332, guid: a7086caeb6838b644a61c6980ba8f8a9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 178030124141405332, guid: a7086caeb6838b644a61c6980ba8f8a9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178030124141405332, guid: a7086caeb6838b644a61c6980ba8f8a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178030124141405332, guid: a7086caeb6838b644a61c6980ba8f8a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178030124141405332, guid: a7086caeb6838b644a61c6980ba8f8a9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 178030124141405333, guid: a7086caeb6838b644a61c6980ba8f8a9,
+        type: 3}
+      propertyPath: m_Name
+      value: CloudEmitter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a7086caeb6838b644a61c6980ba8f8a9, type: 3}
 --- !u!1001 &7389714641532744330
 PrefabInstance:
   m_ObjectHideFlags: 0

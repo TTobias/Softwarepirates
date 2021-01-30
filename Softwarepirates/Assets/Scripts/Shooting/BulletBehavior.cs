@@ -17,6 +17,10 @@ public class BulletBehavior : MonoBehaviour
     public float killDistance;
     private GrapplePullbackBehavior grapplePull;
 
+    private void Awake()
+    {
+        transform.localScale *= scaleMultiplier;
+    }
     public void Start()
     {
         grapplePull = FindObjectOfType<GrapplePullbackBehavior>();

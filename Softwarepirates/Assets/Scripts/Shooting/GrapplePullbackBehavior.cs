@@ -26,23 +26,27 @@ public class GrapplePullbackBehavior : MonoBehaviour
 
     public void Update()
     {
-
-        if (activePirate && canPull && Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.R))
         {
             arrEmitter.Puke();
-            pulling = true;
-            pullTime = 0;
+
+            if (activePirate && canPull && Input.GetKeyDown(KeyCode.R))
+            {
+                pulling = true;
+                pullTime = 0;
+            }
         }
 
-        if(pulling)
+        if (pulling)
         {
             pullTime += Time.deltaTime;
             if(pullTime < pullAmount)
             {
                 currentPirate.transform.Translate((targetPos - landingPosition) * Time.deltaTime);
+
                 float distanceFactor = 1f / currentPirate.transform.position.z;
-                if(hit)
-                    currentPirate.transform.localScale = Vector3.one * distanceFactor /2f;
+                if (hit)
+                    currentPirate.transform.localScale = Vector3.one * distanceFactor / 2f;
                 else
                     currentPirate.transform.localScale = Vector3.one * distanceFactor;
 

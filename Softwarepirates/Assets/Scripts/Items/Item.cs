@@ -7,6 +7,8 @@ public abstract class Item : MonoBehaviour
     protected float speed;
     protected float killAt;
     private ActiveObjects active;
+    public GameObject emitter;
+    private bool wasHit;
 
     public void Start()
     {
@@ -25,6 +27,7 @@ public abstract class Item : MonoBehaviour
 
     public void Cleanup()
     {
+        Debug.Log("Cleaning up");
         active.items.Remove(gameObject);
         Destroy(gameObject);
     }
@@ -44,7 +47,17 @@ public abstract class Item : MonoBehaviour
         return this.speed;
     }
 
-    public abstract void HitByCannonball();
+    public void HitByCannonball()
+    {
+        if(!wasHit)
+        {
+            wasHit = true;
+            GameObject em = Instantiate(emitter, transform.position, Quaternion.identity);
+            em.GetComponent<CloudEmitter>().Puke(true);
+            //em.GetComponent<AudioSource>().Play();
+            Cleanup();
+        }
+    }
 
     public abstract void HitByPirate(GameObject other);
 }

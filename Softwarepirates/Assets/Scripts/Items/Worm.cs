@@ -34,11 +34,6 @@ public class Worm : Item
         hit = true;
     }
 
-    public override void HitByCannonball()
-    {
-        Cleanup();
-    }
-
     public override void HitByPirate(GameObject other)
     {
         GrapplePullbackBehavior shooting = FindObjectOfType<GrapplePullbackBehavior>();
