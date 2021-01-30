@@ -28,7 +28,7 @@ public class ShootingBehavior : MonoBehaviour
     public Image rightMouseImg;
 
     private GrapplePullbackBehavior grapplePull;
-    public GameObject cannonHinge;
+    public GameObject cannonHinge, ballistaHinge;
     private float lastRot;
     private CloudEmitter cloudEmitter;
 
@@ -69,6 +69,10 @@ public class ShootingBehavior : MonoBehaviour
         float angleRad = Mathf.Atan2(lookAt.y - cannonHinge.transform.position.y, lookAt.x - cannonHinge.transform.position.x);
         float angleDeg = (180 / Mathf.PI) * angleRad;
         cannonHinge.transform.rotation = Quaternion.Euler(0, 0, angleDeg);
+
+        angleRad = Mathf.Atan2(lookAt.y - ballistaHinge.transform.position.y, lookAt.x - ballistaHinge.transform.position.x);
+        angleDeg = (180 / Mathf.PI) * angleRad;
+        ballistaHinge.transform.rotation = Quaternion.Euler(0, 0, angleDeg - 90f);
     }
 
 
