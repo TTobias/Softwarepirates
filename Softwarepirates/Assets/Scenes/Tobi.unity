@@ -303,7 +303,7 @@ MonoBehaviour:
   tmpShootCooldown: 0
   grappleCooldown: 20
   tmpGrappleCooldown: 0
-  hitTolerance: 0.5
+  hitTolerance: 0.6
   aimPosition: {x: 0, y: 0, z: 0}
   cam: {fileID: 0}
   shootSpawnPos: {fileID: 1353155854}
