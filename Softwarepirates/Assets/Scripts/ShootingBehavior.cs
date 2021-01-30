@@ -9,7 +9,7 @@ public class ShootingBehavior : MonoBehaviour
     public int grappleCooldown = 20;
     public int tmpGrappleCooldown = 0;
 
-    public float hitTolerance = 2f;
+    public float hitTolerance = 0.5f;
 
     public Vector3 aimPosition;
 
@@ -62,6 +62,7 @@ public class ShootingBehavior : MonoBehaviour
         }
         else {
             //FIRE TARGET
+            Debug.Log("HIT");
         }
 
         tmpShootCooldown = shootCooldown;
@@ -76,6 +77,7 @@ public class ShootingBehavior : MonoBehaviour
         }
         else {
             //FIRE TARGET
+            Debug.Log("HIT");
         }
 
         tmpGrappleCooldown = grappleCooldown;
@@ -99,9 +101,15 @@ public class ShootingBehavior : MonoBehaviour
 
 
     public GameObject testForHit() {
-        for(int i = 0; i<objectlist.items.Count; i++) {
-            if(false /* Item will be hit (forecast simulation)*/) {
-                return objectlist.items[i];
+        float mouseX = cam.ScreenToWorldPoint(aimPosition).x;
+        float mouseY = cam.ScreenToWorldPoint(aimPosition).y;
+
+        for (int i = 0; i<objectlist.items.Count; i++) {
+            if( Mathf.Abs(objectlist.items[i].transform.position.y - mouseY) < hitTolerance) {
+                if((Mathf.Abs(objectlist.items[i].transform.position.x - objectlist.items[i].GetComponent<Item>().GetSpeed()*3f - mouseX) < hitTolerance)) {
+
+                    return objectlist.items[i];
+                }
             }
         }
 

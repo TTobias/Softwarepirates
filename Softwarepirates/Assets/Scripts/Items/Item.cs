@@ -39,7 +39,7 @@ public abstract class Item : MonoBehaviour
         this.speed = speed;
     }
 
-    public float GetSpeed(float speed)
+    public float GetSpeed()
     {
         return this.speed;
     }
