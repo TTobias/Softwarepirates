@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class ShootingBehavior : MonoBehaviour
 {
-    public int shootCooldown = 30;
+    public int shootCooldown = 50;
     public int tmpShootCooldown = 0;
-    public int grappleCooldown = 50;
+    public int grappleCooldown = 100;
     public int tmpGrappleCooldown = 0;
 
     public float hitTolerance = 0.5f;
