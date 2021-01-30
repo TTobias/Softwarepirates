@@ -13,6 +13,7 @@ public class HintCounterController : MonoBehaviour
     void Start()
     {
         tmp = GetComponent<TextMeshProUGUI>();
+        UpdateText();
     }
 
     public void AddHint()

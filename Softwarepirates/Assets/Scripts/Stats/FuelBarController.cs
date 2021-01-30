@@ -24,6 +24,8 @@ public class FuelBarController : MonoBehaviour
         if (fuel < initFuel)
         {
             fuel++;
+            StopAllCoroutines();
+            StartCoroutine(FuelBurnTick());
             UpdateBar();
         }
     }
