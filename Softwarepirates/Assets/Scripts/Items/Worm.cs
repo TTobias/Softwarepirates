@@ -5,6 +5,7 @@ using UnityEngine;
 public class Worm : Item
 {
     public float killPos;
+    private bool hit;
 
     void Start()
     {
@@ -12,18 +13,35 @@ public class Worm : Item
         killAt = killPos;
     }
 
-    public override void Update()
+    public override void FixedUpdate()
     {
         transform.Translate(-speed * Time.deltaTime, 0f, 0f);
         if (transform.position.x < killAt)
         {
             Debug.Log("Hit dude!");
+            HealthBarController health = FindObjectOfType<HealthBarController>();
+            HitPlayer();
             Cleanup();
         }
     }
 
-    public override void DoStuff()
+    public void HitPlayer()
+    {
+        if(!hit)
+        {
+            HealthBarController health = FindObjectOfType<HealthBarController>();
+            health.Damage(25);
+        }
+        hit = true;
+    }
+
+    public override void HitByCannonball()
     {
         
+    }
+
+    public override void HitByPirate()
+    {
+
     }
 }

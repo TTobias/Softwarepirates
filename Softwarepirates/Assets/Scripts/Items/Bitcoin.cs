@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Bitcoin : Item
 {
-    public override void DoStuff()
+    public override void HitByCannonball()
+    {
+
+    }
+
+    public override void HitByPirate()
     {
 
     }
