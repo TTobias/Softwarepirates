@@ -19,7 +19,6 @@ public class Worm : Item
         if (transform.position.x < killAt)
         {
             Debug.Log("Hit dude!");
-            HealthBarController health = FindObjectOfType<HealthBarController>();
             HitPlayer();
             Cleanup();
         }
@@ -37,11 +36,12 @@ public class Worm : Item
 
     public override void HitByCannonball()
     {
-        
+        Cleanup();
     }
 
     public override void HitByPirate()
     {
-
+        PirateCounterController controller = FindObjectOfType<PirateCounterController>();
+        controller.RemovePirate();
     }
 }

@@ -6,7 +6,7 @@ public class Hint : Item
 {
     public override void HitByCannonball()
     {
-
+        Cleanup();
     }
 
     public override void HitByPirate()
