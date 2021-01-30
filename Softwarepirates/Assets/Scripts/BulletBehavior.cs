@@ -30,10 +30,10 @@ public class BulletBehavior : MonoBehaviour
 
             if(referenceObject != null) {
                 if (isCannon) {
-                   //referenceObject.GetComponent<Item>().
+                    referenceObject.GetComponent<Item>().HitByCannonball();
                 }
                 else {
-
+                    referenceObject.GetComponent<Item>().HitByPirate();
                 }
             }
 
