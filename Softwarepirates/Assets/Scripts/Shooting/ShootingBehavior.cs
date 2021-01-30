@@ -32,14 +32,16 @@ public class ShootingBehavior : MonoBehaviour
     private float lastRot;
     private CloudEmitter cloudEmitter;
 
-    public void Start() {
+    public void Start()
+    {
         cloudEmitter = FindObjectOfType<CloudEmitter>();
         grapplePull = FindObjectOfType<GrapplePullbackBehavior>();
         objectlist = GetComponent<ActiveObjects>();
         cam = GetComponent<Camera>();
     }
 
-    public void Update() {
+    public void Update()
+    {
         if (Input.GetMouseButtonDown(0)) {
             if(tmpShootCooldown <= 0)
                 shootBullet();
@@ -50,7 +52,8 @@ public class ShootingBehavior : MonoBehaviour
         }
     }
 
-    public void FixedUpdate() {
+    public void FixedUpdate()
+    {
         if (tmpShootCooldown > 0f) {
             tmpShootCooldown--;
             leftMouseImg.fillAmount = (float)tmpShootCooldown / (float)shootCooldown;
@@ -70,10 +73,10 @@ public class ShootingBehavior : MonoBehaviour
 
 
 
-    public void shootBullet() {
-
+    public void shootBullet()
+    {
         cloudEmitter.Puke();
-        cloudEmitter.gameObject.GetComponent<AudioSource>().Play();
+        shootSpawnPos.gameObject.GetComponent<AudioSource>().Play();
         GameObject hit = testForHit();
 
         if(hit == null) {
@@ -90,8 +93,10 @@ public class ShootingBehavior : MonoBehaviour
         leftMouseImg.fillAmount = 1;
     }
 
-    public void launchGrapple() {
+    public void launchGrapple()
+    {
         grapplePull.activePirate = true;
+        grappleSpawnPos.gameObject.GetComponent<AudioSource>().Play();
 
         GameObject hit = testForHit();
 

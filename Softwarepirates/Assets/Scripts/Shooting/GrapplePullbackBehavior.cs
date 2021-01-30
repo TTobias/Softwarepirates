@@ -15,9 +15,11 @@ public class GrapplePullbackBehavior : MonoBehaviour
 
     private ShootingBehavior shooting;
     private Vector3 targetPos;
+    private ArrEmitter arrEmitter;
 
     public void Start()
     {
+        arrEmitter = FindObjectOfType<ArrEmitter>();
         shooting = FindObjectOfType<ShootingBehavior>();
         targetPos = shooting.grappleSpawnPos.transform.position;
     }
@@ -27,6 +29,7 @@ public class GrapplePullbackBehavior : MonoBehaviour
 
         if (activePirate && canPull && Input.GetKeyDown(KeyCode.R))
         {
+            arrEmitter.Puke();
             pulling = true;
             pullTime = 0;
         }
