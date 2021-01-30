@@ -69,7 +69,7 @@ public class ShootingBehavior : MonoBehaviour
         else {
             //FIRE TARGET
             Debug.Log("HIT");
-            spawnBullet(shootSpawnPos.position, new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, hit.transform.position.z), hit);
+            spawnBullet(shootSpawnPos.position, new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, hit.transform.position.z +3), hit);
         }
 
         tmpShootCooldown = shootCooldown;
@@ -86,7 +86,7 @@ public class ShootingBehavior : MonoBehaviour
         else {
             //FIRE TARGET
             Debug.Log("HIT");
-            spawnGrapple(grappleSpawnPos.position, new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, hit.transform.position.z), hit);
+            spawnGrapple(grappleSpawnPos.position, new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, hit.transform.position.z +3), hit);
         }
 
         tmpGrappleCooldown = grappleCooldown;
@@ -95,8 +95,8 @@ public class ShootingBehavior : MonoBehaviour
 
 
     public void spawnBullet(Vector3 start, Vector3 end, GameObject reference) {
-        GameObject tmp = Instantiate<GameObject>(bulletObject);
-        tmp.transform.position = start;
+        GameObject tmp = Instantiate(bulletObject, start, Quaternion.identity);
+        //tmp.transform.position = start;
 
         tmp.GetComponent<BulletBehavior>().destination = end;
         tmp.GetComponent<BulletBehavior>().referenceObject = reference;
@@ -105,8 +105,8 @@ public class ShootingBehavior : MonoBehaviour
 
 
     public void spawnGrapple(Vector3 start, Vector3 end, GameObject reference) {
-        GameObject tmp = Instantiate<GameObject>(grappleObject);
-        tmp.transform.position = start;
+        GameObject tmp = Instantiate(grappleObject, start, Quaternion.identity);
+        //tmp.transform.position = start;
 
         tmp.GetComponent<BulletBehavior>().destination = end;
         tmp.GetComponent<BulletBehavior>().referenceObject = reference;
