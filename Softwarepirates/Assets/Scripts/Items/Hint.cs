@@ -9,7 +9,7 @@ public class Hint : Item
         Cleanup();
     }
 
-    public override void HitByPirate()
+    public override void HitByPirate(GameObject other)
     {
         HintCounterController hints = FindObjectOfType<HintCounterController>();
         hints.AddHint();

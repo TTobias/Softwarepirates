@@ -14,6 +14,12 @@ public class BulletBehavior : MonoBehaviour
 
     public float distanceFactor = 1f;
     public float killDistance;
+    private GrapplePullbackBehavior grapplePull;
+
+    public void Start()
+    {
+        grapplePull = FindObjectOfType<GrapplePullbackBehavior>();
+    }
 
     public void Update() {
         distanceFactor = 1f / transform.position.z;
@@ -48,23 +54,35 @@ public class BulletBehavior : MonoBehaviour
                     referenceObject.GetComponent<Item>().HitByCannonball();
                 }
                 else {
-                    referenceObject.GetComponent<Item>().HitByPirate();
+                    referenceObject.GetComponent<Item>().HitByPirate(gameObject);
                 }
             }
 
             Destroy(this.gameObject);
         }
 
-        if(referenceObject == null) {
-            if (Vector3.Distance(transform.position, destination) < killDistance) {
-                destroy = true;
+        if (referenceObject == null)
+        {
+            if (Vector3.Distance(transform.position, destination) < killDistance)
+            {
+                if (isCannon)
+                    destroy = true;
+                else
+                {
+                    grapplePull.canPull = true;
+                    this.enabled = false;
+                }
             }
         }
-        else {
-            if (Vector3.Distance(transform.position, referenceObject.transform.position) < killDistance) {
-                destroy = true;
+        else
+        {
+            if (Vector3.Distance(transform.position, referenceObject.transform.position) < killDistance)
+            {
+                if (isCannon)
+                    destroy = true;
+                else
+                    grapplePull.canPull = true;
             }
         }
-
     }
 }

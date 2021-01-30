@@ -27,7 +27,10 @@ public class ShootingBehavior : MonoBehaviour
     public Image leftMouseImg;
     public Image rightMouseImg;
 
+    private GrapplePullbackBehavior grapplePull;
+
     public void Start() {
+        grapplePull = FindObjectOfType<GrapplePullbackBehavior>();
         objectlist = GetComponent<ActiveObjects>();
         cam = GetComponent<Camera>();
     }
@@ -38,7 +41,7 @@ public class ShootingBehavior : MonoBehaviour
                 shootBullet();
         }
         if (Input.GetMouseButtonDown(1)) {
-            if (tmpGrappleCooldown <= 0)
+            if (tmpGrappleCooldown <= 0 && ! grapplePull.activePirate)
                 launchGrapple();
         }
     }
@@ -54,7 +57,6 @@ public class ShootingBehavior : MonoBehaviour
         }
 
         aimPosition = Input.mousePosition;
-
     }
 
 
@@ -68,7 +70,7 @@ public class ShootingBehavior : MonoBehaviour
         }
         else {
             //FIRE TARGET
-            Debug.Log("HIT");
+            //Debug.Log("HIT");
             spawnBullet(shootSpawnPos.position, new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, hit.transform.position.z +3), hit);
         }
 
@@ -77,6 +79,8 @@ public class ShootingBehavior : MonoBehaviour
     }
 
     public void launchGrapple() {
+        grapplePull.activePirate = true;
+
         GameObject hit = testForHit();
 
         if (hit == null) {
@@ -111,6 +115,8 @@ public class ShootingBehavior : MonoBehaviour
         tmp.GetComponent<BulletBehavior>().destination = end;
         tmp.GetComponent<BulletBehavior>().referenceObject = reference;
         tmp.GetComponent<BulletBehavior>().isCannon = false;
+
+        grapplePull.currentPirate = tmp;
     }
 
 

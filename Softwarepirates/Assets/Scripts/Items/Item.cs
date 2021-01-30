@@ -46,5 +46,5 @@ public abstract class Item : MonoBehaviour
 
     public abstract void HitByCannonball();
 
-    public abstract void HitByPirate();
+    public abstract void HitByPirate(GameObject other);
 }
