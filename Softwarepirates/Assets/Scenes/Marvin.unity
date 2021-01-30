@@ -214,18 +214,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1001 &194991027
@@ -295,23 +283,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CloudSpawner (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 2010734101226842051, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1001 &199018723
@@ -384,20 +355,8 @@ PrefabInstance:
     - target: {fileID: 2010734101226842051, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1001 &337916529
@@ -467,18 +426,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CloudSpawner (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1 &339414140
@@ -625,18 +572,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1001 &469251190
@@ -706,23 +641,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CloudSpawner (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 2010734101226842051, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1 &726145624
@@ -1104,18 +1022,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1 &1204562773
@@ -2136,23 +2042,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CloudSpawner
       objectReference: {fileID: 0}
-    - target: {fileID: 2010734101226842051, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
-    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
-        type: 3}
-      propertyPath: cloudTextures.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1001 &7389714641532744330

@@ -46,11 +46,15 @@ MonoBehaviour:
   cloudPrefab: {fileID: 5053210258025863586, guid: 1998412c2b2cf4240a4e1af77d5c3b50,
     type: 3}
   cloudTextures:
-  - {fileID: 21300000, guid: 749c5aa85085e0b4f839ef785041f3c9, type: 3}
-  - {fileID: 21300000, guid: 48f492c1696bc364bad7f4d4968cbac8, type: 3}
-  - {fileID: 21300000, guid: 2a62a4542cfcdf943b2c29d3ddc5d70e, type: 3}
+  - {fileID: 21300000, guid: 89e179848eeb5fd49bec06e0a440076e, type: 3}
+  - {fileID: 21300000, guid: 4d306b8786a341a42a02beb2aa1e6869, type: 3}
+  - {fileID: 21300000, guid: 54b8f18cc036fd942925435e38659532, type: 3}
+  - {fileID: 21300000, guid: 70b65fc596936d941bcda2a928634d8b, type: 3}
+  - {fileID: 21300000, guid: 9cb9dac6d78d6fa409b2b0ee51f18c55, type: 3}
+  - {fileID: 21300000, guid: 0955c4e75a298b54787fd8f260f650f9, type: 3}
+  - {fileID: 21300000, guid: ac1a84594a8d4ab4d9e3ff5acb1e73ac, type: 3}
+  - {fileID: 21300000, guid: 0078a0061917b1d488292bc173616c0a, type: 3}
   minWaitTime: 1
   maxWaitTime: 3
   minVertical: -5
   maxVertical: 5
-  cloudSpeed: 2
