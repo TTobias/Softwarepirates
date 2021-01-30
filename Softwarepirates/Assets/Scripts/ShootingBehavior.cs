@@ -106,7 +106,7 @@ public class ShootingBehavior : MonoBehaviour
 
         for (int i = 0; i<objectlist.items.Count; i++) {
             if( Mathf.Abs(objectlist.items[i].transform.position.y - mouseY) < hitTolerance) {
-                if((Mathf.Abs(objectlist.items[i].transform.position.x - objectlist.items[i].GetComponent<Item>().getSpeed() *3f) - mouseX) < hitTolerance) {
+                if((Mathf.Abs(objectlist.items[i].transform.position.x - objectlist.items[i].GetComponent<Item>().GetSpeed()*3f - mouseX) < hitTolerance)) {
 
                     return objectlist.items[i];
                 }
