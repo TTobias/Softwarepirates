@@ -11,6 +11,7 @@ public class Hint : Item
 
     public override void HitByPirate(GameObject other)
     {
+        //transform.parent = other.transform;
         HintCounterController hints = FindObjectOfType<HintCounterController>();
         hints.AddHint();
         Cleanup();
