@@ -25,6 +25,7 @@ public class GrapplePullbackBehavior : MonoBehaviour
             Debug.Log("Pulling!");
         }
     }
+
     public IEnumerator Wait()
     {
         yield return new WaitForSeconds(1f);
