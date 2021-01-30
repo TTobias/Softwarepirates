@@ -25,6 +25,7 @@ public class ItemSpawner : MonoBehaviour
 
     public IEnumerator SpawnAndWait()
     {
+        yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
         float yValue = Random.Range(minVertical, maxVertical);
         Vector3 startingPos = transform.position + new Vector3(0, yValue, 0);
         GameObject newItem = Instantiate(itemPrefab, startingPos, Quaternion.identity);
@@ -33,7 +34,6 @@ public class ItemSpawner : MonoBehaviour
         controller.SetSpeed(Random.Range(minItemSpeed, maxItemSpeed) / transform.position.z);
         controller.SetKillPos(-transform.position.x);
         newItem.transform.parent = holder.transform;
-        yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
         StartCoroutine(SpawnAndWait());
     }
 }

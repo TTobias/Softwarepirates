@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class HealthBarController : MonoBehaviour
 {
+    public int initHealthPoints;
     private int healthPoints;
     private float initWidth;
     private RectTransform rect;
 
     void Start()
     {
-        healthPoints = 100;
+        healthPoints = initHealthPoints;
         rect = GetComponent<RectTransform>();
         initWidth = rect.sizeDelta.x;
     }

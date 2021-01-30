@@ -14,7 +14,7 @@ public abstract class Item : MonoBehaviour
         active.items.Add(gameObject);
     }
 
-    public virtual void FixedUpdate()
+    public virtual void Update()
     {
         transform.Translate(-speed * Time.deltaTime, 0f, 0f);
         if (transform.position.x < killAt)
@@ -46,5 +46,5 @@ public abstract class Item : MonoBehaviour
 
     public abstract void HitByCannonball();
 
-    public abstract void HitByPirate();
+    public abstract void HitByPirate(GameObject other);
 }
