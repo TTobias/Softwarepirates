@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletBehavior : MonoBehaviour
 {
+    public float scaleMultiplier = 1f;
     public float speed = 1f;
     public Vector3 destination;
     public bool destroy = false;
@@ -27,12 +28,12 @@ public class BulletBehavior : MonoBehaviour
         if (referenceObject == null)
         {
             transform.Translate((destination - transform.position) * speed * Time.deltaTime);
-            transform.localScale = Vector3.one * distanceFactor;
+            transform.localScale = Vector3.one * distanceFactor * scaleMultiplier;
         }
         else
         {
             transform.Translate((referenceObject.transform.position - transform.position) * speed * Time.deltaTime);
-            transform.localScale = Vector3.one * distanceFactor / 2f;
+            transform.localScale = Vector3.one * distanceFactor * scaleMultiplier / 2f;
         }
 
         /*
@@ -47,42 +48,45 @@ public class BulletBehavior : MonoBehaviour
         */
         //this.transform.localScale = new Vector3(distanceFactor, distanceFactor, distanceFactor);
 
-        if (destroy) {
-
-            if(referenceObject != null) {
-                if (isCannon) {
-                    referenceObject.GetComponent<Item>().HitByCannonball();
-                }
-                else {
-                    referenceObject.GetComponent<Item>().HitByPirate(gameObject);
-                }
-            }
-
-            Destroy(this.gameObject);
-        }
-
         if (referenceObject == null)
         {
             if (Vector3.Distance(transform.position, destination) < killDistance)
             {
-                if (isCannon)
-                    destroy = true;
-                else
-                {
-                    grapplePull.canPull = true;
-                    this.enabled = false;
-                }
+                TellItem();
+                grapplePull.canPull = true;
+                grapplePull.hit = false;
+                this.enabled = false;
             }
         }
         else
         {
             if (Vector3.Distance(transform.position, referenceObject.transform.position) < killDistance)
             {
-                if (isCannon)
-                    destroy = true;
-                else
-                    grapplePull.canPull = true;
+                TellItem();
+                grapplePull.canPull = true;
+                grapplePull.hit = true;
+                this.enabled = false;
             }
+        }
+    }
+    private void TellItem()
+    {
+        if (referenceObject != null)
+        {
+            if (isCannon)
+            {
+                referenceObject.GetComponent<Item>().HitByCannonball();
+                Destroy(gameObject);
+            }
+            else
+            {
+                referenceObject.GetComponent<Item>().HitByPirate(gameObject);
+            }
+        }
+        else
+        {
+            if (isCannon)
+                Destroy(gameObject);
         }
     }
 }

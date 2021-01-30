@@ -23,7 +23,7 @@ public abstract class Item : MonoBehaviour
         }
     }
 
-    protected void Cleanup()
+    public void Cleanup()
     {
         active.items.Remove(gameObject);
         Destroy(gameObject);

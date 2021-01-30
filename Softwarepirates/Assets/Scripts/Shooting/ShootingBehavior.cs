@@ -28,14 +28,20 @@ public class ShootingBehavior : MonoBehaviour
     public Image rightMouseImg;
 
     private GrapplePullbackBehavior grapplePull;
+    public GameObject cannonHinge;
+    private float lastRot;
+    private CloudEmitter cloudEmitter;
 
-    public void Start() {
+    public void Start()
+    {
+        cloudEmitter = FindObjectOfType<CloudEmitter>();
         grapplePull = FindObjectOfType<GrapplePullbackBehavior>();
         objectlist = GetComponent<ActiveObjects>();
         cam = GetComponent<Camera>();
     }
 
-    public void Update() {
+    public void Update()
+    {
         if (Input.GetMouseButtonDown(0)) {
             if(tmpShootCooldown <= 0)
                 shootBullet();
@@ -46,7 +52,8 @@ public class ShootingBehavior : MonoBehaviour
         }
     }
 
-    public void FixedUpdate() {
+    public void FixedUpdate()
+    {
         if (tmpShootCooldown > 0f) {
             tmpShootCooldown--;
             leftMouseImg.fillAmount = (float)tmpShootCooldown / (float)shootCooldown;
@@ -57,11 +64,19 @@ public class ShootingBehavior : MonoBehaviour
         }
 
         aimPosition = Input.mousePosition;
+        Vector3 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 lookAt = mouseScreenPosition;
+        float angleRad = Mathf.Atan2(lookAt.y - cannonHinge.transform.position.y, lookAt.x - cannonHinge.transform.position.x);
+        float angleDeg = (180 / Mathf.PI) * angleRad;
+        cannonHinge.transform.rotation = Quaternion.Euler(0, 0, angleDeg);
     }
 
 
 
-    public void shootBullet() {
+    public void shootBullet()
+    {
+        cloudEmitter.Puke();
+        shootSpawnPos.gameObject.GetComponent<AudioSource>().Play();
         GameObject hit = testForHit();
 
         if(hit == null) {
@@ -71,15 +86,17 @@ public class ShootingBehavior : MonoBehaviour
         else {
             //FIRE TARGET
             //Debug.Log("HIT");
-            spawnBullet(shootSpawnPos.position, new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, hit.transform.position.z +3), hit);
+            spawnBullet(shootSpawnPos.position, new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, hit.transform.position.z), hit);
         }
 
         tmpShootCooldown = shootCooldown;
         leftMouseImg.fillAmount = 1;
     }
 
-    public void launchGrapple() {
+    public void launchGrapple()
+    {
         grapplePull.activePirate = true;
+        grappleSpawnPos.gameObject.GetComponent<AudioSource>().Play();
 
         GameObject hit = testForHit();
 
@@ -90,7 +107,7 @@ public class ShootingBehavior : MonoBehaviour
         else {
             //FIRE TARGET
             Debug.Log("HIT");
-            spawnGrapple(grappleSpawnPos.position, new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, hit.transform.position.z +3), hit);
+            spawnGrapple(grappleSpawnPos.position, new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, hit.transform.position.z), hit);
         }
 
         tmpGrappleCooldown = grappleCooldown;
@@ -117,6 +134,7 @@ public class ShootingBehavior : MonoBehaviour
         tmp.GetComponent<BulletBehavior>().isCannon = false;
 
         grapplePull.currentPirate = tmp;
+        grapplePull.landingPosition = end;
     }
 
 

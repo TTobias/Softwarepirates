@@ -8,27 +8,60 @@ public class GrapplePullbackBehavior : MonoBehaviour
     public GameObject currentPirate;
     public bool activePirate = false;
     public bool canPull = false;
+    private bool pulling;
+    private float pullTime;
+    public Vector3 landingPosition;
+    public bool hit;
 
     private ShootingBehavior shooting;
     private Vector3 targetPos;
+    private ArrEmitter arrEmitter;
 
     public void Start()
     {
+        arrEmitter = FindObjectOfType<ArrEmitter>();
         shooting = FindObjectOfType<ShootingBehavior>();
         targetPos = shooting.grappleSpawnPos.transform.position;
     }
 
     public void Update()
     {
+
         if (activePirate && canPull && Input.GetKeyDown(KeyCode.R))
         {
-            Debug.Log("Pulling!");
+            arrEmitter.Puke();
+            pulling = true;
+            pullTime = 0;
         }
-    }
 
-    public IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(1f);
-        canPull = true;
+        if(pulling)
+        {
+            pullTime += Time.deltaTime;
+            if(pullTime < pullAmount)
+            {
+                currentPirate.transform.Translate((targetPos - landingPosition) * Time.deltaTime);
+                float distanceFactor = 1f / currentPirate.transform.position.z;
+                if(hit)
+                    currentPirate.transform.localScale = Vector3.one * distanceFactor /2f;
+                else
+                    currentPirate.transform.localScale = Vector3.one * distanceFactor;
+
+                float distance = Vector3.Distance(currentPirate.transform.position, targetPos);
+
+                if (distance < 1.5f)
+                {
+                    pulling = false;
+                    Item child = currentPirate.GetComponentInChildren<Item>();
+                    if(child != null)
+                    {
+                        child.Cleanup();
+                    }
+                    Destroy(currentPirate);
+                    currentPirate = null;
+                    activePirate = false;
+                    canPull = false;
+                }
+            }
+        }
     }
 }

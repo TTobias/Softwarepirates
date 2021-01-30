@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8bbc5405e87cb4479e69d179bee2b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scaleMultiplier: 2
   speed: 4
   destination: {x: 0, y: 0, z: 0}
   destroy: 0
