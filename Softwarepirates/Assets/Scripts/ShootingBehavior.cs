@@ -58,12 +58,12 @@ public class ShootingBehavior : MonoBehaviour
 
         if(hit == null) {
             //FIRE EMPTY
-            spawnBullet(shootSpawnPos.position ,new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, 6));
+            spawnBullet(shootSpawnPos.position ,new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, 6), hit);
         }
         else {
             //FIRE TARGET
             Debug.Log("HIT");
-            spawnBullet(shootSpawnPos.position, hit.transform.position);
+            spawnBullet(shootSpawnPos.position, new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, hit.transform.position.z), hit);
         }
 
         tmpShootCooldown = shootCooldown;
@@ -74,31 +74,35 @@ public class ShootingBehavior : MonoBehaviour
 
         if (hit == null) {
             //FIRE EMPTY
-            spawnGrapple(grappleSpawnPos.position, new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, 6));
+            spawnGrapple(grappleSpawnPos.position, new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, 6), hit);
         }
         else {
             //FIRE TARGET
             Debug.Log("HIT");
-            spawnGrapple(grappleSpawnPos.position, hit.transform.position);
+            spawnGrapple(grappleSpawnPos.position, new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, hit.transform.position.z), hit);
         }
 
         tmpGrappleCooldown = grappleCooldown;
     }
 
 
-    public void spawnBullet(Vector3 start, Vector3 end) {
+    public void spawnBullet(Vector3 start, Vector3 end, GameObject reference) {
         GameObject tmp = Instantiate<GameObject>(bulletObject);
         tmp.transform.position = start;
 
         tmp.GetComponent<BulletBehavior>().destination = end;
+        tmp.GetComponent<BulletBehavior>().referenceObject = reference;
+        tmp.GetComponent<BulletBehavior>().isCannon = true;
     }
 
 
-    public void spawnGrapple(Vector3 start, Vector3 end) {
+    public void spawnGrapple(Vector3 start, Vector3 end, GameObject reference) {
         GameObject tmp = Instantiate<GameObject>(grappleObject);
         tmp.transform.position = start;
 
         tmp.GetComponent<BulletBehavior>().destination = end;
+        tmp.GetComponent<BulletBehavior>().referenceObject = reference;
+        tmp.GetComponent<BulletBehavior>().isCannon = false;
     }
 
 
@@ -109,7 +113,7 @@ public class ShootingBehavior : MonoBehaviour
         for (int i = 0; i<objectlist.items.Count; i++) {
             if( Mathf.Abs(objectlist.items[i].transform.position.y - mouseY) < hitTolerance) {
                 if((Mathf.Abs(mouseX - (objectlist.items[i].transform.position.x -  
-                    (objectlist.items[i].transform.position.z * 22f /*random value, don't question it*/ * objectlist.items[i].GetComponent<Item>().GetSpeed() * Time.deltaTime))) < hitTolerance)) {
+                    (objectlist.items[i].transform.position.z * 16f /*random value, don't question it*/ * objectlist.items[i].GetComponent<Item>().GetSpeed() * Time.deltaTime))) < hitTolerance)) {
 
                     return objectlist.items[i];
                 }
