@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShootingBehavior : MonoBehaviour
 {
-    public int shootCooldown = 10;
+    public int shootCooldown = 30;
     public int tmpShootCooldown = 0;
-    public int grappleCooldown = 20;
+    public int grappleCooldown = 50;
     public int tmpGrappleCooldown = 0;
 
     public float hitTolerance = 0.5f;
@@ -22,6 +23,9 @@ public class ShootingBehavior : MonoBehaviour
     public GameObject grappleObject;
 
     public ActiveObjects objectlist;
+
+    public Image leftMouseImg;
+    public Image rightMouseImg;
 
     public void Start() {
         objectlist = GetComponent<ActiveObjects>();
@@ -42,9 +46,11 @@ public class ShootingBehavior : MonoBehaviour
     public void FixedUpdate() {
         if (tmpShootCooldown > 0f) {
             tmpShootCooldown--;
+            leftMouseImg.fillAmount = (float)tmpShootCooldown / (float)shootCooldown;
         }
         if (tmpGrappleCooldown > 0f) {
             tmpGrappleCooldown--;
+            rightMouseImg.fillAmount = (float)tmpGrappleCooldown / (float)grappleCooldown;
         }
 
         aimPosition = Input.mousePosition;
@@ -67,6 +73,7 @@ public class ShootingBehavior : MonoBehaviour
         }
 
         tmpShootCooldown = shootCooldown;
+        leftMouseImg.fillAmount = 1;
     }
 
     public void launchGrapple() {
@@ -83,6 +90,7 @@ public class ShootingBehavior : MonoBehaviour
         }
 
         tmpGrappleCooldown = grappleCooldown;
+        rightMouseImg.fillAmount = 1;
     }
 
 
@@ -113,7 +121,7 @@ public class ShootingBehavior : MonoBehaviour
         for (int i = 0; i<objectlist.items.Count; i++) {
             if( Mathf.Abs(objectlist.items[i].transform.position.y - mouseY) < hitTolerance) {
                 if((Mathf.Abs(mouseX - (objectlist.items[i].transform.position.x -  
-                    (objectlist.items[i].transform.position.z * 16f /*random value, don't question it*/ * objectlist.items[i].GetComponent<Item>().GetSpeed() * Time.deltaTime))) < hitTolerance)) {
+                    (objectlist.items[i].transform.position.z * 8f /*random value, don't question it*/ * objectlist.items[i].GetComponent<Item>().GetSpeed() * Time.deltaTime))) < hitTolerance)) {
 
                     return objectlist.items[i];
                 }
