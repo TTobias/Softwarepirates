@@ -47,6 +47,7 @@ MonoBehaviour:
   speed: 0.8
   destination: {x: 0, y: 0, z: 0}
   destroy: 0
+  distanceFactor: 1
 --- !u!1 &3101879065040526083
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +74,7 @@ Transform:
   m_GameObject: {fileID: 3101879065040526083}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.018, y: 0.17, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 896309166762923245}
   m_RootOrder: 0

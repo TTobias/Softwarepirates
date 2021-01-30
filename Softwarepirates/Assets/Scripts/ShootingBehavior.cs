@@ -63,6 +63,7 @@ public class ShootingBehavior : MonoBehaviour
         else {
             //FIRE TARGET
             Debug.Log("HIT");
+            spawnBullet(shootSpawnPos.position, hit.transform.position);
         }
 
         tmpShootCooldown = shootCooldown;
@@ -78,6 +79,7 @@ public class ShootingBehavior : MonoBehaviour
         else {
             //FIRE TARGET
             Debug.Log("HIT");
+            spawnGrapple(grappleSpawnPos.position, hit.transform.position);
         }
 
         tmpGrappleCooldown = grappleCooldown;
@@ -106,7 +108,8 @@ public class ShootingBehavior : MonoBehaviour
 
         for (int i = 0; i<objectlist.items.Count; i++) {
             if( Mathf.Abs(objectlist.items[i].transform.position.y - mouseY) < hitTolerance) {
-                if((Mathf.Abs(objectlist.items[i].transform.position.x - objectlist.items[i].GetComponent<Item>().GetSpeed()*3f - mouseX) < hitTolerance)) {
+                if((Mathf.Abs(mouseX - (objectlist.items[i].transform.position.x -  
+                    (objectlist.items[i].transform.position.z * 22f /*random value, don't question it*/ * objectlist.items[i].GetComponent<Item>().GetSpeed() * Time.deltaTime))) < hitTolerance)) {
 
                     return objectlist.items[i];
                 }
