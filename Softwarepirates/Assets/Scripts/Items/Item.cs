@@ -44,5 +44,7 @@ public abstract class Item : MonoBehaviour
         return this.speed;
     }
 
-    public abstract void DoStuff();
+    public abstract void HitByCannonball();
+
+    public abstract void HitByPirate();
 }

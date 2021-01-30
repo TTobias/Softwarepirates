@@ -5,7 +5,7 @@ using UnityEngine;
 public class Worm : Item
 {
     public float killPos;
-    private bool didStuff;
+    private bool hit;
 
     void Start()
     {
@@ -20,18 +20,28 @@ public class Worm : Item
         {
             Debug.Log("Hit dude!");
             HealthBarController health = FindObjectOfType<HealthBarController>();
-            DoStuff();
+            HitPlayer();
             Cleanup();
         }
     }
 
-    public override void DoStuff()
+    public void HitPlayer()
     {
-        if(!didStuff)
+        if(!hit)
         {
             HealthBarController health = FindObjectOfType<HealthBarController>();
             health.Damage(25);
         }
-        didStuff = true;
+        hit = true;
+    }
+
+    public override void HitByCannonball()
+    {
+        
+    }
+
+    public override void HitByPirate()
+    {
+
     }
 }
