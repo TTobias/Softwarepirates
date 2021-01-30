@@ -400,6 +400,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HintSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 3208766552978902402, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4249236929503892217, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
         type: 3}
       propertyPath: itemPrefab
@@ -563,6 +568,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CloudSpawner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010734101226842051, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
@@ -827,6 +837,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CloudSpawner (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010734101226842051, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
@@ -1120,6 +1135,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449784119}
   m_CullTransparentMesh: 0
+--- !u!4 &463231312 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1125100478}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &469251190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1186,6 +1207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CloudSpawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010734101226842051, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
@@ -2261,9 +2287,125 @@ Transform:
   - {fileID: 2108164870}
   - {fileID: 554316594}
   - {fileID: 2076529942}
+  - {fileID: 463231312}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1125100478
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1103623507}
+    m_Modifications:
+    - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 949180343881920054, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010734101226842051, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_Name
+      value: FelixBirthdaySpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010734101226842051, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: cloudTextures.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4d7d3f1286ea6144b9177e209ac5a868,
+        type: 3}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: minVertical
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: maxVertical
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: onlyOnce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: minWaitTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: maxWaitTime
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 127d7e5949dce444dab327f462e1840a, type: 3}
 --- !u!1 &1135820978
 GameObject:
   m_ObjectHideFlags: 0
@@ -3862,6 +4004,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WormSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 3208766552978902402, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4249236929503892217, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
         type: 3}
       propertyPath: itemPrefab
@@ -3947,6 +4094,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CloudSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010734101226842051, guid: 127d7e5949dce444dab327f462e1840a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5700867351425988473, guid: 127d7e5949dce444dab327f462e1840a,
         type: 3}
@@ -4101,6 +4253,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BitcoinSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 3208766552978902402, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4249236929503892217, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
         type: 3}

@@ -9,6 +9,7 @@ public class CloudSpawner : MonoBehaviour
     public float minWaitTime, maxWaitTime;
     public float minVertical, maxVertical;
     private GameObject holder;
+    public bool onlyOnce;
 
     private void OnDrawGizmos()
     {
@@ -35,6 +36,7 @@ public class CloudSpawner : MonoBehaviour
         newCloud.GetComponent<SpriteRenderer>().sprite = cloudTextures[Random.Range(0, cloudTextures.Length)];
         newCloud.transform.parent = holder.transform;
         yield return new WaitForSeconds(Random.Range(minWaitTime/transform.position.z, maxWaitTime/transform.position.z));
-        StartCoroutine(SpawnAndWait());
+        if(!onlyOnce)
+            StartCoroutine(SpawnAndWait());
     }
 }
