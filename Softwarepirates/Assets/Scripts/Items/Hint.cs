@@ -11,6 +11,8 @@ public class Hint : Item
 
     public override void HitByPirate()
     {
-
+        HintCounterController hints = FindObjectOfType<HintCounterController>();
+        hints.AddHint();
+        Cleanup();
     }
 }

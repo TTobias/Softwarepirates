@@ -11,6 +11,8 @@ public class Bitcoin : Item
 
     public override void HitByPirate()
     {
-
+        FuelBarController fuel = FindObjectOfType<FuelBarController>();
+        fuel.AddFuel();
+        Cleanup();
     }
 }

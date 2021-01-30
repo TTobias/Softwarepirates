@@ -13,7 +13,7 @@ public class Worm : Item
         killAt = killPos;
     }
 
-    public override void FixedUpdate()
+    public override void Update()
     {
         transform.Translate(-speed * Time.deltaTime, 0f, 0f);
         if (transform.position.x < killAt)
