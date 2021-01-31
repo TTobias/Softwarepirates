@@ -3406,7 +3406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -352.1, y: 112.5}
+  m_AnchoredPosition: {x: 338.9, y: 63}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1046168257
@@ -3423,7 +3423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pirateIcon: {fileID: 1161927460217623577, guid: c48d9baff254f664fb600fdbe67b07af,
     type: 3}
-  distance: 40
+  distance: -40
   initPirates: 3
 --- !u!1 &1046171977
 GameObject:
@@ -4549,7 +4549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootCooldown: 50
   tmpShootCooldown: 0
-  grappleCooldown: 90
+  grappleCooldown: 10
   tmpGrappleCooldown: 0
   hitTolerance: 0.6
   aimPosition: {x: 0, y: 0, z: 0}
