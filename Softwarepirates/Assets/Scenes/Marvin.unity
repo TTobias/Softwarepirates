@@ -4072,6 +4072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loseScreen: {fileID: 1341906203}
   musicPlayer: {fileID: 1567595176}
+  startTime: 0.5
 --- !u!4 &1210999117
 Transform:
   m_ObjectHideFlags: 0
