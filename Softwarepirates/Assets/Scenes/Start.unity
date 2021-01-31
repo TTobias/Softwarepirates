@@ -603,8 +603,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 323, y: -194}
-  m_SizeDelta: {x: 156, y: 47.31}
+  m_AnchoredPosition: {x: 275.58, y: -194}
+  m_SizeDelta: {x: 250.84, y: 47.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &773263028
 MonoBehaviour:
@@ -626,7 +626,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'A game by
 
-    Marvin, Tobi and Felix'
+    Marvin, Tobi, Sarah and Felix'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3687873fbfeba98458a238ffdf7d4751, type: 2}
   m_sharedMaterial: {fileID: 21674529945150456, guid: 3687873fbfeba98458a238ffdf7d4751,
@@ -696,10 +696,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 1.7958612, w: 0}
   m_textInfo:
     textComponent: {fileID: 773263028}
-    characterCount: 32
+    characterCount: 39
     spriteCount: 0
-    spaceCount: 6
-    wordCount: 7
+    spaceCount: 7
+    wordCount: 8
     linkCount: 0
     lineCount: 2
     pageCount: 1
