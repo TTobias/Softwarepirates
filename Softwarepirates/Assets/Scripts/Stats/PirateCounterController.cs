@@ -22,7 +22,7 @@ public class PirateCounterController : MonoBehaviour
         for(int i = 0; i < initPirates; i++)
         {
             GameObject instance = Instantiate(pirateIcon);
-            instance.transform.SetParent(transform.parent);
+            instance.transform.SetParent(transform);
             instance.GetComponent<RectTransform>().SetPositionAndRotation(rect.position + new Vector3(0,i*distance,0), rect.rotation);
             icons[i] = instance;
         }

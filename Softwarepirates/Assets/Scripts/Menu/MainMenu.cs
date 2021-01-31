@@ -7,6 +7,11 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public Sprite enterSprite;
+
+    private void Start()
+    {
+        Cursor.visible = true;
+    }
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Return))
