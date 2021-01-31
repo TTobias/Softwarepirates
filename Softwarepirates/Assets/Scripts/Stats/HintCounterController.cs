@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class HintCounterController : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class HintCounterController : MonoBehaviour
     {
         gameWon = FindObjectOfType<GameWon>();
         tmp = GetComponent<TextMeshProUGUI>();
-        UpdateText();
+        UpdateBar();
     }
 
     public void AddHint()
@@ -23,7 +24,7 @@ public class HintCounterController : MonoBehaviour
         if(hints < neededHints)
         {
             hints++;
-            UpdateText();
+            UpdateBar();
         }
         if (hints == neededHints)
             gameWon.Execute();
@@ -34,12 +35,13 @@ public class HintCounterController : MonoBehaviour
         if(hints > 0)
         {
             hints--;
-            UpdateText();
+            UpdateBar();
         }
     }
 
-    private void UpdateText()
+    private void UpdateBar()
     {
-        tmp.text = "Hints: " + hints + "/" + neededHints;
+        //tmp.text = "Hints: " + hints + "/" + neededHints;
+        GetComponent<Image>().fillAmount = (float)hints / (float)neededHints;
     }
 }
