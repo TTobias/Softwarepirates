@@ -11,6 +11,8 @@ public class HintCounterController : MonoBehaviour
     private int hints = 0;
     private TextMeshProUGUI tmp;
     private GameWon gameWon;
+    public GameObject wormSpawner;
+    public float adjustWaitTimeBy;
 
     void Start()
     {
@@ -24,6 +26,7 @@ public class HintCounterController : MonoBehaviour
         if(hints < neededHints)
         {
             hints++;
+            wormSpawner.GetComponent<ItemSpawner>().maxWaitTime -= adjustWaitTimeBy;
             UpdateBar();
         }
         if (hints == neededHints)

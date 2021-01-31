@@ -1996,6 +1996,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neededHints: 5
+  wormSpawner: {fileID: 0}
+  adjustWaitTimeBy: 0
 --- !u!4 &554316594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2658671684890713569, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
@@ -3319,6 +3321,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neededHints: 5
+  wormSpawner: {fileID: 1003042148}
+  adjustWaitTimeBy: 0.45
 --- !u!1 &963275093
 GameObject:
   m_ObjectHideFlags: 0
@@ -3459,6 +3463,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1003042148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3208766552978902402, guid: b84c4ee89dc1a0543b6497abb1bb8cb5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1948544016}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1046168255
 GameObject:
   m_ObjectHideFlags: 0
