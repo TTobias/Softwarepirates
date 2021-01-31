@@ -26,11 +26,13 @@ public class ShootingBehavior : MonoBehaviour
 
     public Image leftMouseImg;
     public Image rightMouseImg;
+    public Image reloadImg;
 
     private GrapplePullbackBehavior grapplePull;
     public GameObject cannonHinge, ballistaHinge;
     private float lastRot;
     private CloudEmitter cloudEmitter;
+    public GameObject pirate;
 
     public void Start()
     {
@@ -56,12 +58,14 @@ public class ShootingBehavior : MonoBehaviour
     {
         if (tmpShootCooldown > 0f) {
             tmpShootCooldown--;
-            leftMouseImg.fillAmount = (float)tmpShootCooldown / (float)shootCooldown;
+            leftMouseImg.fillAmount = 1 -(float)tmpShootCooldown / (float)shootCooldown;
         }
+        
         if (tmpGrappleCooldown > 0f) {
             tmpGrappleCooldown--;
-            rightMouseImg.fillAmount = (float)tmpGrappleCooldown / (float)grappleCooldown;
+            //rightMouseImg.fillAmount = (float)tmpGrappleCooldown / (float)grappleCooldown;
         }
+        
 
         aimPosition = Input.mousePosition;
         Vector3 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -75,7 +79,17 @@ public class ShootingBehavior : MonoBehaviour
         ballistaHinge.transform.rotation = Quaternion.Euler(0, 0, angleDeg - 90f);
     }
 
+    public void ShowPirate()
+    {
+        pirate.GetComponent<SpriteRenderer>().enabled = true;
+        reloadImg.GetComponent<Image>().enabled = false;
+    }
 
+    public void HidePirate()
+    {
+        pirate.GetComponent<SpriteRenderer>().enabled = false;
+        reloadImg.GetComponent<Image>().enabled = true;
+    }
 
     public void shootBullet()
     {
@@ -99,6 +113,7 @@ public class ShootingBehavior : MonoBehaviour
 
     public void launchGrapple()
     {
+        HidePirate();
         grapplePull.activePirate = true;
         grappleSpawnPos.gameObject.GetComponent<AudioSource>().Play();
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GrapplePullbackBehavior : MonoBehaviour
 {
@@ -60,6 +61,7 @@ public class GrapplePullbackBehavior : MonoBehaviour
                     {
                         child.Cleanup();
                     }
+                    shooting.ShowPirate();
                     Destroy(currentPirate);
                     currentPirate = null;
                     activePirate = false;

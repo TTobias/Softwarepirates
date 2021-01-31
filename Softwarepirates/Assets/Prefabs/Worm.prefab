@@ -94,3 +94,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emitter: {fileID: 178030124141405333, guid: a7086caeb6838b644a61c6980ba8f8a9, type: 3}
   killPos: -6
+  clip: {fileID: 8300000, guid: acb2dbc10e1196648a8c968c7270e54e, type: 3}

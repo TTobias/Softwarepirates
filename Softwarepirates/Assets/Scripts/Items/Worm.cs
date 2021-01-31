@@ -6,10 +6,13 @@ public class Worm : Item
 {
     public float killPos;
     private bool hit;
+    public AudioClip clip;
+    private SoundManager sound;
 
     public new void Start()
     {
         base.Start();
+        sound = FindObjectOfType<SoundManager>();
         killAt = killPos;
     }
 
@@ -26,6 +29,9 @@ public class Worm : Item
 
     public void HitPlayer()
     {
+        sound.GetComponent<AudioSource>().clip = clip;
+        sound.GetComponent<AudioSource>().Play();
+
         if(!hit)
         {
             HealthBarController health = FindObjectOfType<HealthBarController>();
