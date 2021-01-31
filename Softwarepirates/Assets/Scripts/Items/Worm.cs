@@ -8,10 +8,12 @@ public class Worm : Item
     private bool hit;
     public AudioClip clip;
     private SoundManager sound;
+    private ShootingBehavior shootBeh;
 
     public new void Start()
     {
         base.Start();
+        shootBeh = FindObjectOfType<ShootingBehavior>();
         sound = FindObjectOfType<SoundManager>();
         killAt = killPos;
     }
@@ -42,6 +44,7 @@ public class Worm : Item
 
     public override void HitByPirate(GameObject other)
     {
+        shootBeh.ShowPirate();
         GrapplePullbackBehavior shooting = FindObjectOfType<GrapplePullbackBehavior>();
         shooting.activePirate = false;
         shooting.canPull = false;
