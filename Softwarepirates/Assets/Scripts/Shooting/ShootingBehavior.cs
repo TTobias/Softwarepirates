@@ -129,7 +129,7 @@ public class ShootingBehavior : MonoBehaviour
         }
         else {
             //FIRE TARGET
-            Debug.Log("HIT");
+            //Debug.Log("HIT");
             spawnGrapple(grappleSpawnPos.position, new Vector3(cam.ScreenToWorldPoint(aimPosition).x, cam.ScreenToWorldPoint(aimPosition).y, hit.transform.position.z), hit);
         }
 

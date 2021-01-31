@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class HealthBarController : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class HealthBarController : MonoBehaviour
     private int healthPoints;
     private float initWidth;
     private RectTransform rect;
+    private GameOver gameOver;
 
     void Start()
     {
+        gameOver = FindObjectOfType<GameOver>();
         healthPoints = initHealthPoints;
         rect = GetComponent<RectTransform>();
         initWidth = rect.sizeDelta.x;
@@ -22,7 +25,7 @@ public class HealthBarController : MonoBehaviour
         healthPoints -= amount;
         UpdateBar();
         if (healthPoints <= 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            gameOver.Execute();
     }
 
     public void Heal(int amount)
@@ -33,6 +36,7 @@ public class HealthBarController : MonoBehaviour
 
     private void UpdateBar()
     {
-        rect.sizeDelta = new Vector2(initWidth * healthPoints/100, rect.sizeDelta.y);
+        //rect.sizeDelta = new Vector2(initWidth * healthPoints/100, rect.sizeDelta.y);
+        GetComponent<Image>().fillAmount = (float)healthPoints / (float)initHealthPoints;
     }
 }

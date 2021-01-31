@@ -27,7 +27,7 @@ public abstract class Item : MonoBehaviour
 
     public void Cleanup()
     {
-        Debug.Log("Cleaning up");
+        //Debug.Log("Cleaning up");
         active.items.Remove(gameObject);
         Destroy(gameObject);
     }

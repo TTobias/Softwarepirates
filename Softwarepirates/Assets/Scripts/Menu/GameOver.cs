@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject loseScreen;
+    public void Execute()
     {
-        
+        StartCoroutine(ShowKillScreen());
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator ShowKillScreen()
     {
-        
+        Camera.main.transform.GetComponent<AudioListener>().enabled = false;
+        loseScreen.GetComponent<Image>().enabled = true;
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(0);
     }
 }

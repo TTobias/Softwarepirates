@@ -10,9 +10,11 @@ public class FuelBarController : MonoBehaviour
     public float secondsForBurn;
     private int fuel;
     private Image image;
+    private GameOver gameOver;
 
     void Start()
     {
+        gameOver = FindObjectOfType<GameOver>();
         fuel = initFuel;
         image = GetComponent<Image>();
         UpdateBar();
@@ -34,8 +36,8 @@ public class FuelBarController : MonoBehaviour
     {
         fuel--;
         UpdateBar();
-        if(fuel <= 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (fuel <= 0)
+            gameOver.Execute();
     }
 
     private void UpdateBar()

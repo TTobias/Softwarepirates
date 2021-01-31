@@ -1,18 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class GameWon : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject winScreen;
+    public void Execute()
     {
-        
+        StartCoroutine(ShowWinScreen());
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator ShowWinScreen()
     {
-        
+        winScreen.GetComponent<AudioSource>().Play();
+        winScreen.GetComponent<Image>().enabled = true;
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(0);
     }
 }

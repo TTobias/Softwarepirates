@@ -9,9 +9,11 @@ public class HintCounterController : MonoBehaviour
     public int neededHints;
     private int hints = 0;
     private TextMeshProUGUI tmp;
+    private GameWon gameWon;
 
     void Start()
     {
+        gameWon = FindObjectOfType<GameWon>();
         tmp = GetComponent<TextMeshProUGUI>();
         UpdateText();
     }
@@ -23,8 +25,8 @@ public class HintCounterController : MonoBehaviour
             hints++;
             UpdateText();
         }
-        if(hints == neededHints)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (hints == neededHints)
+            gameWon.Execute();
     }
 
     public void RemoveHint()
