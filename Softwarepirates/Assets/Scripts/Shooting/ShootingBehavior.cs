@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ShootingBehavior : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class ShootingBehavior : MonoBehaviour
     private float lastRot;
     private CloudEmitter cloudEmitter;
     public GameObject pirate;
+    public GameObject ropePuker;
 
     public void Start()
     {
@@ -83,12 +85,14 @@ public class ShootingBehavior : MonoBehaviour
     {
         pirate.GetComponent<SpriteRenderer>().enabled = true;
         reloadImg.GetComponent<Image>().enabled = false;
+        reloadImg.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = false;
     }
 
     public void HidePirate()
     {
         pirate.GetComponent<SpriteRenderer>().enabled = false;
         reloadImg.GetComponent<Image>().enabled = true;
+        reloadImg.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enabled = true;
     }
 
     public void shootBullet()
@@ -151,6 +155,7 @@ public class ShootingBehavior : MonoBehaviour
         tmp.GetComponent<BulletBehavior>().destination = end;
         tmp.GetComponent<BulletBehavior>().referenceObject = reference;
         tmp.GetComponent<BulletBehavior>().isCannon = false;
+        tmp.GetComponentInChildren<Rope>().puker = ropePuker.transform;
 
         grapplePull.currentPirate = tmp;
         grapplePull.landingPosition = end;

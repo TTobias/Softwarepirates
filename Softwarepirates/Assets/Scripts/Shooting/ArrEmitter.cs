@@ -6,7 +6,8 @@ public class ArrEmitter : MonoBehaviour
 {
     public GameObject arrPrefab;
     public Sprite[] arrTextures;
-    public float minForce, maxForce;
+    public float minForceX, maxForceX;
+    public float minForceY, maxForceY;
     public float minTorque, maxTorque;
     public float minLifetime, maxLifetime;
 
@@ -25,7 +26,7 @@ public class ArrEmitter : MonoBehaviour
     {
         GameObject newArr = Instantiate(arrPrefab, transform.position, Quaternion.identity);
         Rigidbody2D rb = newArr.GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector2(Random.Range(minForce, maxForce), Random.Range(minForce, maxForce)));
+        rb.AddForce(new Vector2(Random.Range(minForceX, maxForceX), Random.Range(minForceY, maxForceY)));
         rb.AddTorque(Random.Range(minTorque, maxTorque));
         newArr.GetComponent<SpriteRenderer>().sprite = arrTextures[Random.Range(0, arrTextures.Length)];
         yield return new WaitForSeconds(Random.Range(minLifetime, maxLifetime));

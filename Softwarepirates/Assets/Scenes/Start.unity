@@ -1320,10 +1320,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Arrgh! Someone stole the enter key of our ship! \nWithout it we cannot
-    enter other vessels or format our bottled messages. \nCollect all the hints to
-    retrieve the enter key, but beware of the russian hacker-worms and keep an eye
-    on the fuel.\nReady to go Catptain?"
+  m_text: "Arrgh! Someone stole our enter key! \nWithout it we cannot enter other
+    vessels or format our bottled messages. \nCollect all the hints to retrieve the
+    enter key, but beware of the russian hacker-worms and keep an eye on the fuel!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1392,12 +1391,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -8.479766, w: 0}
   m_textInfo:
     textComponent: {fileID: 2027387101}
-    characterCount: 261
+    characterCount: 227
     spriteCount: 0
-    spaceCount: 48
-    wordCount: 47
+    spaceCount: 41
+    wordCount: 40
     linkCount: 0
-    lineCount: 5
+    lineCount: 4
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
